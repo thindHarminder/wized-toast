@@ -8,10 +8,15 @@ $('#actions').on('click', () => {
   Toast(randomAction())
 })
 
+window.onload = async () => {  
+  Wized.data.listen("v.myvalue", async () => {    
+      const newValue = await Wized.data.get("v.myvalue"); // Get new value    
+      console.log("Value of v.myvalue changed to: ", newValue); // Console log new value  
+  });
+}
 $('#spells').on('click', async () => {
     
-  const toastText = await Wized.data.get("v.toastmessage"); // Get new value    
-        console.log("Value of v.myvalue changed to: ", toastText);
+  const toastText = newValue
   if (toastText) {
     await Toast(toastText);
   } else {
