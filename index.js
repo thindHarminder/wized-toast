@@ -9,7 +9,7 @@ $('#actions').on('click', () => {
 })
 
 $('#spells').on('click', async () => {
-  const toastText = document.getElementById('textToast').value.trim();
+  const toastText = toastmessage.value.trim();
   if (toastText) {
     await Toast(toastText);
   } else {
