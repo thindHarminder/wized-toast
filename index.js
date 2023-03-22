@@ -11,7 +11,7 @@ $('#actions').on('click', () => {
 $('#spells').on('click', async () => {
     
   const toastText = await Wized.data.get("v.toastmessage"); // Get new value    
-        console.log("Value of v.myvalue changed to: ", newMessage);
+        console.log("Value of v.myvalue changed to: ", toastText);
   if (toastText) {
     await Toast(toastText);
   } else {
