@@ -3,23 +3,45 @@ import Toast from 'https://cdn.jsdelivr.net/gh/thindHarminder/toast@main/toast.j
 
 
 
-$('#actions').on('click', () => {
-  Toast(randomAction())
-})
 
-$('#spells').on('click', async () => {
-  const toastText = document.getElementById('textToast').value.trim();
-  if (toastText) {
-    await Toast(toastText);
-  } else {
-    await Toast(randomSpell());
+
+let toaststate = false; // assume initial state is false
+
+function showToast() {
+  if (toaststate) {
+    const toastText = toastmessage.trim();
+    if (toastText) {
+      Toast(toastText).then(() => {
+        toaststate = false; // reset toaststate to false after the Toast is done
+      });
+    }
   }
-  console.log('poof');
+}
+
+// whenever toaststate changes, call showToast
+Object.defineProperty(window, 'toaststate', {
+  set(value) {
+    toaststate = value;
+    showToast();
+  },
+  get() {
+    return toaststate;
+  }
+});
+
+// whenever toastmessage changes, call showToast
+Object.defineProperty(window, 'toastmessage', {
+  set(value) {
+    window._toastmessage = value;
+    showToast();
+  },
+  get() {
+    return window._toastmessage;
+  }
+});
+
+$('#spells').on('click', () => {
+  window.toaststate = true; // set toaststate to true when the button is clicked
 });
 
 
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
