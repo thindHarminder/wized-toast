@@ -29,16 +29,6 @@ Object.defineProperty(window, 'toaststate', {
   }
 });
 
-// whenever toastmessage changes, call showToast
-Object.defineProperty(window, 'toastmessage', {
-  set(value) {
-    window._toastmessage = value;
-    showToast();
-  },
-  get() {
-    return window._toastmessage;
-  }
-});
 
 
 
