@@ -1,4 +1,5 @@
-import $ from 'https://cdn.skypack.dev/pin/blingblingjs@v2.3.0-e2PTciHn3Q19fSwvwGKy/mode=imports,min/optimized/blingblingjs.js'
+window.onload = async () => {  
+    mport $ from 'https://cdn.skypack.dev/pin/blingblingjs@v2.3.0-e2PTciHn3Q19fSwvwGKy/mode=imports,min/optimized/blingblingjs.js'
 import Toast from 'https://cdn.jsdelivr.net/gh/thindHarminder/toast@main/toast.js'
 
 
@@ -23,3 +24,4 @@ const getRandomInt = (min, max) => {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
+};i
