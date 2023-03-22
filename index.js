@@ -15,15 +15,11 @@ $('#spells').on('click', async () => {
   if (toastText) {
     await Toast(toastText);
   } else {
-    await Toast(randomSpell());
+    console.log('toasttext not defined');
   }
   console.log('poof');
 });
 
 
-const getRandomInt = (min, max) => {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+
 }
