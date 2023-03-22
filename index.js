@@ -40,8 +40,6 @@ Object.defineProperty(window, 'toastmessage', {
   }
 });
 
-$('#spells').on('click', () => {
-  window.toaststate = true; // set toaststate to true when the button is clicked
-});
+
 
 
