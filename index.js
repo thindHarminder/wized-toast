@@ -9,18 +9,19 @@ window.onload = async () => {
   Wized.data.listen("v.myvalue", async () => {    
       const newValue = await Wized.data.get("v.myvalue"); // Get new value    
       console.log("Value of v.myvalue changed to: ", newValue); // Console log new value  
+      $('#spells').on('click', async () => {
+    
+        const toastText = newValue
+        if (toastText) {
+          await Toast(toastText);
+        } else {
+          console.log('toasttext not defined');
+        }
+        console.log('poof');
+      });
   });
 }
-$('#spells').on('click', async () => {
-    
-  const toastText = newValue
-  if (toastText) {
-    await Toast(toastText);
-  } else {
-    console.log('toasttext not defined');
-  }
-  console.log('poof');
-});
+
 
 
 
