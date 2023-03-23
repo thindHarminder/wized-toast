@@ -24,4 +24,4 @@ $('#spells').on('click', async () => {
 
 
 
-}
+
