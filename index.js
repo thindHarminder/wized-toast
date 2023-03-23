@@ -6,9 +6,9 @@ import Toast from 'https://cdn.jsdelivr.net/gh/thindHarminder/toast@main/toast.j
 
 
 window.onload = async () => {  
-  Wized.data.listen("v.myvalue", async () => {    
-      const newValue = await Wized.data.get("v.myvalue"); // Get new value    
-      console.log("Value of v.myvalue changed to: ", newValue); // Console log new value  
+  Wized.data.listen("v.toastmessage", async () => {    
+      const newValue = await Wized.data.get("v.toastmessage"); // Get new value    
+      console.log("Value of v.toastmessage changed to: ", newValue); // Console log new value  
       $('#spells').on('click', async () => {
     
         const toastText = newValue
