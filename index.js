@@ -3,10 +3,7 @@
 import Toast from 'https://cdn.jsdelivr.net/gh/thindHarminder/toast@main/toast.js'
 
 
-window.onload = async () => {  
-$('#actions').on('click', () => {
-  Toast(randomAction())
-})
+
 
 window.onload = async () => {  
   Wized.data.listen("v.myvalue", async () => {    
